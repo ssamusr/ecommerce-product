@@ -1,9 +1,12 @@
-import { Navbar } from './components/Navbar'
+import { Main, Navbar } from './components/'
 import './App.css'
 
 function App () {
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <Main />
+    </>
   )
 }
 
