@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { images } from '../../data/data'
 import { IconNext, IconPrevious } from '../Icons'
 
@@ -20,6 +20,22 @@ export function Hero () {
       setIndex(index + 1)
     }
   }
+
+  const keyPress = (e) => {
+    if (e.key === 'ArrowRight') {
+      return handleNext()
+    }
+
+    if (e.key === 'ArrowLeft') {
+      return handlePrevius()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyPress)
+    return () => document.removeEventListener('keydown', keyPress)
+  }, [keyPress])
+
   return (
     <section className='w-full h-80 relative lg:h-auto'>
       <button
