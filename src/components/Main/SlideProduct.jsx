@@ -1,8 +1,10 @@
+// TODO: arregla las dimensiones de las imagenes para que sea más responsivo
+
 import { useEffect, useState } from 'react'
 import { images } from '../../data/data'
 import { IconNext, IconPrevious } from '../Icons'
 
-export function Hero () {
+export function SlideProduct () {
   const [index, setIndex] = useState(0)
 
   const handlePrevius = () => {
@@ -69,7 +71,7 @@ export function Hero () {
                   alt={image.alt}
                   className={index === image.id - 1
                     ? 'h-full object-cover rounded-xl opacity-50'
-                    : 'h-full object-cover rounded-xl'}
+                    : 'h-full object-cover rounded-xl hover:opacity-25'}
                 />
               </button>
             ))
@@ -87,5 +89,3 @@ export function Hero () {
     </section>
   )
 }
-
-/* 'h-full object-cover rounded-xl' */
