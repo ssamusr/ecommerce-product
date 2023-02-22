@@ -41,12 +41,21 @@ export function Hero () {
         <div className='hidden lg:flex lg:gap-8 lg:w-full lg:h-24'>
           {
             images.map((image) => (
-              <li
+              <button
                 key={image.id}
                 className='list-none'
+                onClick={() => {
+                  setIndex(image.id - 1)
+                }}
               >
-                <img src={image.image} alt='' className='h-full object-cover rounded-xl' />
-              </li>
+                <img
+                  src={image.image}
+                  alt={image.alt}
+                  className={index === image.id - 1
+                    ? 'h-full object-cover rounded-xl opacity-50'
+                    : 'h-full object-cover rounded-xl'}
+                />
+              </button>
             ))
           }
         </div>
@@ -62,3 +71,5 @@ export function Hero () {
     </section>
   )
 }
+
+/* 'h-full object-cover rounded-xl' */
